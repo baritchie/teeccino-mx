@@ -1,8 +1,8 @@
 <div x-data="{ mobileMenuOpen: false }" class="relative bg-white">
     <div
-        class="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-20 md:max-w-screen-2xl mr-auto ml-auto font-medium font-poppins">
-        <div class="lg:w-0 lg:flex-1 space-x-36">
-            <img class="md:max-h-16 max-h-10" src="./assets/images/Teeccino_logo.png" alt="Workflow" />
+        class="flex justify-between items-center py-4 px-4 md:py-6 sm:px-6 md:justify-around md:space-x-20 md:max-w-screen-2xl mr-auto ml-auto font-medium font-poppins">
+        <div class="lg:w-0 lg:flex-1 space-x-20">
+            <img class="max-w-xs w-40 lg:w-auto" src="./assets/images/Teeccino_logo.png" alt="Workflow" />
         </div>
         <div class="-mr-2 -my-2 md:hidden">
             <button @click="mobileMenuOpen = true" type="button"
@@ -12,19 +12,19 @@
                 </svg>
             </button>
         </div>
-        <nav class="hidden md:flex space-x-10 md:flex-initial justify-end">
+        <nav class="hidden md:flex md:flex-initial justify-end lg:space-x-10">
             <a href="#" class="text-xl leading-6 font-medium text-default-gray focus:outline-none">
                 HOME
             </a>
 
-            <a href="#" class="text-xl leading-6 font-medium text-default-gray focus:outline-none">
+            <a href="#" class="text-xl leading-6 font-medium text-default-gray focus:outline-none ml-6">
                 PRODUCTS
             </a>
 
             <div x-description="Flyout menu, show/hide based on flyout menu state." x-data="{ flyoutMenuOpen: false }"
                 @mouseleave="flyoutMenuOpen = !flyoutMenuOpen" class="relative">
                 <button type="button" @mouseenter="flyoutMenuOpen = !flyoutMenuOpen"
-                    class="inline-flex items-center space-x-2 text-xl leading-6 font-medium text-default-gray focus:outline-none">
+                    class="inline-flex items-center space-x-2 text-xl leading-6 font-medium text-default-gray focus:outline-none ml-6">
                     <span>ABOUT</span>
                     <svg class="h-5 w-5 text-default-gray" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
@@ -72,13 +72,18 @@
         </nav>
         <div class="hidden md:flex items-center md:flex-initial justify-end space-x-4">
             <span class="inline-flex text-teeccino-purple">
-                <i class="fab fa-facebook-square fa-2x"></i>
+                <a href="https://facebook.com/teeccino" target="_blank"><i
+                        class="fab fa-facebook-square fa-2x hover:shadow-lg"></i></a>
             </span>
             <span class="inline-flex text-teeccino-purple">
-                <i class="fab fa-twitter-square fa-2x"></i>
+                <a href="https://twitter.com/teeccino" target="_blank">
+                    <i class="fab fa-twitter-square fa-2x hover:shadow-lg"></i>
+                </a>
             </span>
             <span class="inline-flex text-teeccino-purple">
-                <i class="fab fa-instagram-square fa-2x"></i>
+                <a href="https://instagram.com/teeccino" target="_blank">
+                    <i class="fab fa-instagram-square fa-2x hover:shadow-lg"></i>
+                </a>
             </span>
         </div>
     </div>

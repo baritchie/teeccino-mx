@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    @variants responsive {
+        .hero_bg {
+            background: linear-gradient(90deg, rgba(255,255,255,.5) 10%, rgba(0,0,0,0) 50%), url(/assets/images/hero_1.jpg);
+            background-size:cover;
+            background-position:right;
+        }
+        .hero_bg_mobile {
+            background: linear-gradient(180deg, rgba(255,255,255,0.7) 100%, rgba(0,0,0,0) 100%), url(/assets/images/hero_1_mobile.jpg);
+            background-size: cover;
+            background-position: bottom;
+        }
+    }
+}
