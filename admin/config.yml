@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-media_folder: 'assets/uploads'
+media_folder: 'assets/images'
 collections:
   - name: 'blog'
     label: 'Blog'
