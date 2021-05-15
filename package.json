@@ -40,6 +40,6 @@
     "access": "public"
   },
   "dependencies": {
-    "daisyui": "^0.27.2"
+    "@tailwindcss/typography": "^0.4.0"
   }
 }
