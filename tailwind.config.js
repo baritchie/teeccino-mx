@@ -11,6 +11,7 @@ module.exports = {
             'teeccino-brown': '#512f2e',
             'default-gray': '#252525',
             'gif-red': '#a40046',
+            'gif-blue': '#0f7480',
         },
         backgroundImage: theme => ({
             'hero-1': "url('/assets/images/hero_1.jpg')",

@@ -1,0 +1,55 @@
+<div x-data="{ tab: 'mushroom' }" class="mb-20">
+    <ul
+        class="h-12 list-none flex container ml-auto mr-auto mt-10 mb-10 overflow-y-scroll items-center text-center justify-center">
+        <li class="-mb-px mr-1">
+            <button class="bg-white inline-block py-2 px-4 text-blue-dark font-semibold"
+                :class="{ 'active': tab === 'mushroom' }" @click="tab = 'mushroom'">Mushroom Adaptogen</button>
+        </li>
+        <li class="mr-1">
+            <button class="bg-white inline-block py-2 px-4 text-blue-dark font-semibold"
+                :class="{ 'active': tab === 'prebiotic' }" @click="tab = 'prebiotic'">Prebiotic SuperBoost</button>
+        </li>
+        <li class="mr-1">
+            <button class="bg-white inline-block py-2 px-4 text-blue-dark font-semibold"
+                :class="{ 'active': tab === 'dandelion' }" @click="tab = 'dandelion'">Dandelion</button>
+        </li>
+        <li class="mr-1">
+            <button class="bg-white inline-block py-2 px-4 text-blue-dark font-semibold"
+                :class="{ 'active': tab === 'mediterranean' }" @click="tab = 'mediterranean'">Mediterranean</button>
+        </li>
+        <li class="mr-1">
+            <button class="bg-white inline-block py-2 px-4 text-blue-dark font-semibold"
+                :class="{ 'active': tab === 'maya' }" @click="tab = 'maya'">Maya</button>
+        </li>
+    </ul>
+    <div x-show="tab === 'mushroom'" class="container flex m-auto flex-wrap justify-between">
+        <div>Mushroom 1</div>
+        <div>Mushroom 2</div>
+        <div>Mushroom 3</div>
+        <div>Mushroom 4</div>
+    </div>
+    <div x-show="tab === 'prebiotic'" class="container flex m-auto flex-wrap justify-between">
+        <div>Prebiotic 1</div>
+        <div>Prebiotic 2</div>
+        <div>Prebiotic 3</div>
+        <div>Prebiotic 4</div>
+    </div>
+    <div x-show="tab === 'dandelion'" class="container flex m-auto flex-wrap justify-between">
+        <div>Dandelion 1</div>
+        <div>Dandelion 2</div>
+        <div>Dandelion 3</div>
+        <div>Dandelion 4</div>
+    </div>
+    <div x-show="tab === 'mediterranean'" class="container flex m-auto flex-wrap justify-between">
+        <div>Mediterranean 1</div>
+        <div>Medtierranean 2</div>
+        <div>Mediterannean 3</div>
+        <div>Mediterannean 4</div>
+    </div>
+    <div x-show="tab === 'maya'" class="container flex m-auto flex-wrap justify-between">
+        <div>Maya 1</div>
+        <div>Maya 2</div>
+        <div>Maya 3</div>
+        <div>Maya 4</div>
+    </div>
+</div>
