@@ -30,3 +30,4 @@ build:
   mount_path: "/srv"
   working_dir: "/srv"
   instant_preview_command: npm run dev
+---
