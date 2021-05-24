@@ -63,7 +63,7 @@ task("processStyles", () => {
 });
 
 task("execJekyll", () => {
-    return spawn("bundle exec jekyll serve");
+    return ("bundle exec jekyll serve");
 });
 
 task("startServer", () => {
@@ -95,7 +95,7 @@ task("startServer", () => {
 });
 
 const buildSite = series("buildJekyll", "processStyles");
-const buildDev = series("execJekyll");
+const buildDev = series("buildForestryStyles", "execJekyll");
 
 exports.forestry = series(buildDev);
 exports.serve = series(buildSite, "startServer");
