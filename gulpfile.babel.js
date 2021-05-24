@@ -31,10 +31,6 @@ task("buildForestry", () => {
 
 task("buildForestryStyles", () => {
     const args = ["exec", jekyll, "build"];
-
-    if (isDevelopmentBuild) {
-      args.push("--incremental");
-    }
   
     return spawn("bundle", args, { stdio: "inherit" });
 });
@@ -96,6 +92,6 @@ task("startServer", () => {
 const buildSite = series("buildJekyll", "processStyles");
 const buildDev = series("buildForestry", "buildForestryStyles");
 
-exports.serve = series(buildSite, "startServer");
 exports.forestry = series(buildDev);
+exports.serve = series(buildSite, "startServer");
 exports.default = series(buildSite);
