@@ -1,7 +1,4 @@
 ---
----
-
----
 new_page_extension: md
 auto_deploy: false
 admin_path: 
@@ -9,7 +6,7 @@ webhook_url:
 sections:
 - type: directory
   path: ''
-  label: "*"
+  label: All
   create: all
   match: "**/*"
 upload_dir: uploads
