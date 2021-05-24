@@ -61,6 +61,10 @@ task("processStyles", () => {
     .pipe(dest(POST_BUILD_STYLESHEET));
 });
 
+task("execJekyll", () => {
+    return spawn("bundle exec jekyll serve");
+});
+
 task("startServer", () => {
   browserSync.init({
     files: [SITE_ROOT + "/**"],
@@ -92,6 +96,6 @@ task("startServer", () => {
 const buildSite = series("buildJekyll", "processStyles");
 const buildDev = series("buildForestry", "buildForestryStyles");
 
-exports.forestry = series(buildDev);
+exports.forestry = series(buildDev, "execJekyll");
 exports.serve = series(buildSite, "startServer");
 exports.default = series(buildSite);
