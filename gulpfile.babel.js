@@ -97,5 +97,5 @@ const buildSite = series("buildJekyll", "processStyles");
 const buildDev = series("buildForestry", "buildForestryStyles");
 
 exports.serve = series(buildSite, "startServer");
-exports.default = series(buildSite);
 exports.forestry = series(buildDev);
+exports.default = series(buildSite);
