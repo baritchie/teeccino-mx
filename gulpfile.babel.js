@@ -17,7 +17,7 @@ const jekyll = process.platform === "win32" ? "jekyll.bat" : "jekyll";
 
 const isDevelopmentBuild = process.env.NODE_ENV === "development";
 
-task("buildForestry", () => {
+task("buildForestryStyles", () => {
     return src(PRE_BUILD_STYLESHEET)
     .pipe(
       postcss([
@@ -29,14 +29,14 @@ task("buildForestry", () => {
     .pipe(dest(POST_BUILD_STYLESHEET));
 });
 
-task("buildForestryStyles", () => {
+task("buildForestry", () => {
     const args = ["exec", jekyll, "build"];
   
     return spawn("bundle", args, { stdio: "inherit" });
 });
 
 task("buildJekyll", () => {
-    /*
+    
   browserSync.notify("Building Jekyll site...");
 
   const args = ["exec", jekyll, "build"];
@@ -46,8 +46,6 @@ task("buildJekyll", () => {
   }
 
   return spawn("bundle", args, { stdio: "inherit" });
-  */
-  return spawn("bundle exec jekyll serve");
 });
 
 task("processStyles", () => {
@@ -97,7 +95,7 @@ task("startServer", () => {
 });
 
 const buildSite = series("buildJekyll", "processStyles");
-const buildDev = series("buildForestry", "buildForestryStyles");
+const buildDev = series("execJekyll");
 
 exports.forestry = series(buildDev);
 exports.serve = series(buildSite, "startServer");
