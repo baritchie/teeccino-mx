@@ -63,14 +63,20 @@ task("processStyles", () => {
 });
 
 task("execJekyll", () => {
-    return ("bundle exec jekyll serve");
+    const args = ["exec", jekyll, "serve"];
+
+    if (isDevelopmentBuild) {
+      args.push("--incremental");
+    }
+  
+    return spawn("bundle", args, { stdio: "inherit" });
 });
 
 task("startServer", () => {
   browserSync.init({
     files: [SITE_ROOT + "/**"],
     open: "local",
-    port: 4000,
+    port: 8080,
     server: {
       baseDir: SITE_ROOT,
       serveStaticOptions: {
@@ -95,7 +101,7 @@ task("startServer", () => {
 });
 
 const buildSite = series("buildJekyll", "processStyles");
-const buildDev = series("buildForestryStyles", "execJekyll");
+const buildDev = series("buildJekyll", "buildForestryStyles", "execJekyll");
 
 exports.forestry = series(buildDev);
 exports.serve = series(buildSite, "startServer");
