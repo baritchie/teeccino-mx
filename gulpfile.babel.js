@@ -36,6 +36,7 @@ task("buildForestryStyles", () => {
 });
 
 task("buildJekyll", () => {
+    /*
   browserSync.notify("Building Jekyll site...");
 
   const args = ["exec", jekyll, "build"];
@@ -45,6 +46,8 @@ task("buildJekyll", () => {
   }
 
   return spawn("bundle", args, { stdio: "inherit" });
+  */
+  return spawn("bundle exec jekyll serve");
 });
 
 task("processStyles", () => {
@@ -96,6 +99,6 @@ task("startServer", () => {
 const buildSite = series("buildJekyll", "processStyles");
 const buildDev = series("buildForestry", "buildForestryStyles");
 
-exports.forestry = series(buildDev, "execJekyll");
+exports.forestry = series(buildDev);
 exports.serve = series(buildSite, "startServer");
 exports.default = series(buildSite);
