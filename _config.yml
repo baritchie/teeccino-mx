@@ -9,14 +9,14 @@ collections:
     output: true
 description: Teeccino International Demo
 exclude:
-- Gemfile
-- Gemfile.lock
-- gulpfile.babel.js
-- LICENSE.md
-- node_modules
-- package.json
-- package-lock.json
-- README.md
-- src
-- tailwind.config.js
-- netlify.toml
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.babel.js
+  - LICENSE.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - src
+  - tailwind.config.js
+  - netlify.toml
